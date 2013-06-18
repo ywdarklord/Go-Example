@@ -1,7 +1,7 @@
 package main
 
 import (
-	//"os"
+	
 	"log"
 	"fmt"
 	"net/http"
@@ -12,15 +12,14 @@ import (
 )
 
 const (
-	BUCKET = "wyangspace"  // change to own space name
-	DOMAIN = "wyangspace.qiniudn.com"
+	BUCKET = "APPLY YOUR BUCKET NAME HERE"  // change to own space name
+	DOMAIN = "APPLY YOUR DOMAIN HERE" // For example: myspace.qiniudn.com
 )
 
 // --------------------------------------------------------------------------------
 
 func init() {
-	//ACCESS_KEY = os.Getenv("QINIU_ACCESS_KEY")
-	//SECRET_KEY = os.Getenv("QINIU_SECRET_KEY")
+
 	ACCESS_KEY = "" // Apply Access key here
 	SECRET_KEY = "" // Apply Secret key here
 	if ACCESS_KEY == "" || SECRET_KEY == "" {
@@ -29,7 +28,9 @@ func init() {
 }
 
 // --------------------------------------------------------------------------------
+// HTML code that will be shown on the webpage
 
+//Simple upload without assigning key for the image you want to upload
 var uploadFormFmt = `
 <html>
  <body>
@@ -41,7 +42,7 @@ var uploadFormFmt = `
  </body>
 </html>
 `
-
+//Assign a key for the image you want to upload
 var uploadWithKeyFormFmt = `
 <html>
  <body>
@@ -54,7 +55,7 @@ var uploadWithKeyFormFmt = `
  </body>
 </html>
 `
-
+//Assign both key and custom field 
 var uploadWithkeyAndCustomFieldFmt = `
 <html>
  <body>
